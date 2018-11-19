@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+    <head>
+        <title>
+            {% block title %}
+                Freeshelf: Free Coding Books from Around the Web
+            {% endblock title %}
+        </title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+            {% block header %}{% endblock header %}
+    </head>
+    <body>
+        <header>
+            <h1>Freeshelf: Free Coding Books from Around the Web</h1>
+            <div class="nav">    
+            <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'css' %}">CSS</a></li>
+                    <li><a href="{% url 'django' %}">Django</a></li>
+                    <li><a href="{% url 'html' %}">HTML</a></li>
+                    <li><a href="{% url 'javascript' %}">Javascript</a></li>
+                    <li><a href="{% url 'python' %}">Python</a></li>
+                    <li><a href="{% url 'r' %}">R</a></li>
+                </ul>
+            </div>
+        </header>
+        {% block content %}{% endblock content %}
+        {% block footer %}{% endblock footer %}
+    </body>
+</html>
+
