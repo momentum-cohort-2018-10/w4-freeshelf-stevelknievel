@@ -5,6 +5,9 @@
 {% endblock title %}
 
 {% block content %}
-    <!-- <h1>Welcome to Freeshelf: Free coding books from around the web.</h1> -->
-    <p>Welcome to Freeshelf!  This is a showcase of free books about coding from all around the web.  Please register, comment, and/or suggest your favorite books about coding!</p>
+    {% for book in books %}
+    <h2>{{ book.title }}</h2>
+    <p>By {{ book.author }}</p>
+    <p>{{ book.description }}</p>
+    {% endfor %}
 {% endblock content %}

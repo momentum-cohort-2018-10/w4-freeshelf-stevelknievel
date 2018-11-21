@@ -15,13 +15,14 @@
             <h1>Freeshelf: Free Coding Books from Around the Web</h1>
             <div class="nav">    
             <ul>
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'css' %}">CSS</a></li>
-                    <li><a href="{% url 'django' %}">Django</a></li>
-                    <li><a href="{% url 'html' %}">HTML</a></li>
-                    <li><a href="{% url 'javascript' %}">Javascript</a></li>
+                    <li><a href="{% url 'home' %}">All Books</a></li>
+                    <li>Books by Category: </li>
+                    <li><a href="{% url 'htmlcss' %}">HTML & CSS</a>  |  </li>
+                    <li><a href="{% url 'django' %}">Django</a>  |  </li>
+                    <li><a href="{% url 'ruby' %}">Ruby</a>  |  </li>
+                    <li><a href="{% url 'javascript' %}">Javascript</a>  |  </li>
                     <li><a href="{% url 'python' %}">Python</a></li>
-                    <li><a href="{% url 'r' %}">R</a></li>
+                    
                 </ul>
             </div>
         </header>
