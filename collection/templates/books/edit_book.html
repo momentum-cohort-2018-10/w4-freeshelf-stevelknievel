@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}
+    Edit {{ book.title }} - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <h2>Edit "{{ book.title }}"</h2>
+    <form role="form" action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button typ="submit">Submit</button>
+    </form>
+{% endblock %}

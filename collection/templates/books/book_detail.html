@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% load humanize %}
 {% block title %}
-    Homepage - {{ block.super }}
+    {{ book.title }} - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
-    {% for book in books %}
-    <h2><a href="{% url 'book_detail' slug=book.slug %}">
-        {{ book.title }}</a></h2>
+    
+    <h2>{{ book.title }}</h2>
     <p>By {{ book.author }}</p>
     <p>{{ book.description }}</p>
     <p>Date Added: {{ book.date_added }} |  Date Last Updated: {{ book.date_last_updated }}</p>
-
-    {% endfor %}
+    <a href="{% url 'edit_book' slug=book.slug %}">
+        Edit me!
+    </a>
 {% endblock content %}

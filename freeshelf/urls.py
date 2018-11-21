@@ -25,5 +25,7 @@ urlpatterns = [
     path('ruby/', TemplateView.as_view(template_name='ruby.html'), name='ruby'),
     path('javascript/', TemplateView.as_view(template_name='javascript.html'), name='javascript'),
     path('python/', TemplateView.as_view(template_name='python.html'), name='python'),
+    path('books/<slug>/', views.book_detail, name='book_detail'),
+    path('books/<slug>/edit', views.edit_book, name='edit_book'),
     path('admin/', admin.site.urls),
 ]
