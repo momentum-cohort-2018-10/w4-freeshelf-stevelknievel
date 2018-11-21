@@ -20,11 +20,10 @@ from collection import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('css/', TemplateView.as_view(template_name='css.html'), name='css'),
+    path('htmlcss/', TemplateView.as_view(template_name='htmlcss.html'), name='htmlcss'),
     path('django/', TemplateView.as_view(template_name='django.html'), name='django'),
-    path('html/', TemplateView.as_view(template_name='html.html'), name='html'),
+    path('ruby/', TemplateView.as_view(template_name='ruby.html'), name='ruby'),
     path('javascript/', TemplateView.as_view(template_name='javascript.html'), name='javascript'),
     path('python/', TemplateView.as_view(template_name='python.html'), name='python'),
-    path('r/', TemplateView.as_view(template_name='r'), name='r'),
     path('admin/', admin.site.urls),
 ]
