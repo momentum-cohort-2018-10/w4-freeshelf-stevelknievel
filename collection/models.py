@@ -12,11 +12,12 @@ class Book(models.Model):
     slug = models.SlugField(unique=True)
     date_added = models.DateTimeField(auto_now_add=True)
     date_last_updated = models.DateTimeField(auto_now=True)
+    category = models.CharField(max_length=255, default='Coding')
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     
 
-class Category(models.Model):
-    category = models.CharField(max_length=30)
-    title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
+# class Category(models.Model):
+#     category = models.CharField(max_length=30)
+#     title = models.CharField(max_length=255)
+#     slug = models.SlugField(unique=True)
 

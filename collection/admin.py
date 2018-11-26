@@ -6,7 +6,7 @@ from collection.models import Book
 # create automated slug creation:
 class BookAdmin(admin.ModelAdmin):
     model = Book
-    list_display = ('title', 'author', 'description',)
+    list_display = ('title', 'author', 'description', 'date_added', 'category',)
     prepopulated_fields = {'slug': ('title',)}
 
 
