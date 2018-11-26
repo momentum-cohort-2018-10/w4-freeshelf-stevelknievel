@@ -15,14 +15,26 @@
             <h1>Freeshelf: Free Coding Books from Around the Web</h1>
             <div class="nav">    
             <ul>
-                    <li><a href="{% url 'home' %}">All Books</a></li>
+                    <li><a href="{% url 'home' %}"><strong>All Books</strong></a></li>
                     <li>Books by Category: </li>
                     <li><a href="{% url 'htmlcss' %}">HTML & CSS</a>  |  </li>
                     <li><a href="{% url 'django' %}">Django</a>  |  </li>
                     <li><a href="{% url 'ruby' %}">Ruby</a>  |  </li>
                     <li><a href="{% url 'javascript' %}">Javascript</a>  |  </li>
-                    <li><a href="{% url 'python' %}">Python</a></li>
-                    
+                    <li><a href="{% url 'python' %}">Python</a> ||  </li>
+                    <li><a href="{% url 'browse' %}">Browse Books</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'auth_logout' %}"><strong>Logout</strong></a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'auth_login' %}"><strong>Login</strong></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'registration_register' %}"><strong>Register</strong></a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </header>

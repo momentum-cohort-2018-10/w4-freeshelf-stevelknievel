@@ -10,7 +10,10 @@
     <p>By {{ book.author }}</p>
     <p>{{ book.description }}</p>
     <p>Date Added: {{ book.date_added }} |  Date Last Updated: {{ book.date_last_updated }}</p>
-    <a href="{% url 'edit_book' slug=book.slug %}">
-        Edit me!
-    </a>
+    {% if user == book.user %} 
+        <p>
+            <a href="{% url 'edit_book' slug=book.slug %}"> 
+                Edit me!
+            </a> </p>
+    {% endif %}
 {% endblock content %}
