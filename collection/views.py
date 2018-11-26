@@ -26,9 +26,9 @@ def book_detail(request, slug):
 def browse_by_name(request, initial=None):
     if initial:
         books = Book.objects.filter(
-            name__istartswith=initial).order_by('name')
+            title__istartswith=initial).order_by('title')
     else:
-        books = Book.objects.all().order_by('name')
+        books = Book.objects.all().order_by('title')
     return render(request, 'search/search.html', {
         'books': books,
         'initial': initial,
